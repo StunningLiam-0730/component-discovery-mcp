@@ -1,0 +1,23 @@
+[
+  {
+    "name": "MockSelectComponent",
+    "filePath": "src/components/common/MockSelectComponent.vue",
+    "type": "select",
+    "structure": ["dropdown-menu", "options-list"],
+    "capabilities": ["single-selection"],
+    "props": { "options": { "type": "Array" } },
+    "emits": ["change"]
+  },
+  {
+    "name": "MockSpecialSelect",
+    "filePath": "src/components/universal/MockSpecialSelect.vue",
+    "type": "select",
+    "structure": ["dropdown-menu", "checkbox-list", "select-all-row", "count-badge"],
+    "capabilities": ["multiple-selection", "select-all", "selected-count"],
+    "configurableProps": {
+      "searchable": { "enablesCapability": "search-filter" }
+    },
+    "props": { "optionsData": { "type": "Array" } },
+    "emits": ["getData"]
+  }
+]
