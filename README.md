@@ -1,4 +1,3 @@
-```
 # 🔍 Component Discovery MCP Server
 
 **基於 Model Context Protocol (MCP) 的企業級前端元件智能檢索工具**
@@ -59,5 +58,3 @@ npm run build
 
 * 腳本自動化：開發 AST 掃描腳本，一鍵自動更新 JSON 特徵庫。
 * 維度擴充：加入 `styleTokens` (設計系統代幣) 與 `businessContext` (業務場景) 提升模糊搜尋精準度。
-
-```
