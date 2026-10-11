@@ -48,6 +48,9 @@ export function matchComponents(query: MatchQuery, database: ComponentMeta[]): M
     };
   });
 
-  // 3. 依分數遞減排序，回傳前 3 名
-  return results.sort((a, b) => b.score - a.score).slice(0, 3);
+  // 3. 門檻過濾與排序，回傳最多前 5 名
+  return results
+    .filter((res) => res.score > 0) // 剔除 0 分的不相關元件
+    .sort((a, b) => b.score - a.score)
+    .slice(0, 5); 
 }
