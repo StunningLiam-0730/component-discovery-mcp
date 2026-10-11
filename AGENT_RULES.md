@@ -21,10 +21,6 @@ MCP 回傳的 `score` 欄位代表「必要特徵覆蓋率 (Required Capability 
 1.4 未知資訊處理
 當資料無法確認、JSON 中未提供，或無法從截圖中判定時，應直接使用 unknown、填寫「無」，或省略該欄位，絕對不得自行補全。
 
-1.5 資安規範 (嚴格遵守)
-- 嚴禁在代碼、註解或測試資料中提及任何特定企業名稱、內部專案名稱或真實路徑。
-- 測試資料一律使用 `data/mock-components.json`，元件名稱一律帶有 `Mock` 前綴。
-
 ---
 
 ## 2. 強制輸出格式 (Mandatory Output Format)
@@ -41,18 +37,19 @@ MCP 回傳的 `score` 欄位代表「必要特徵覆蓋率 (Required Capability 
 (請依據 MCP 回傳的元件數量依序呈現。最多顯示 Top-5。若無結果，請明示無相符元件)
 
 <details open>
-  <summary><b>1. [Component Name]</b> (Match Level: [判定] | Coverage: [score]%)</summary>
+<summary><b>1. [Component Name]</b> (Match Level: [判定] | Coverage: [score]%)</summary>
 
-  #### 1. Why Matched? (特徵比對)
-  * ✓ **符合**: [列出 JSON 中 matchedCapabilities 內的特徵]
-  * ✗ **缺少**: [列出 JSON 中 missingCapabilities 內的特徵，若無則填「無」]
+#### 1. Why Matched? (特徵比對)
+* ✓ **符合**: [列出 JSON 中 matchedCapabilities 內的特徵]
+* ✗ **缺少**: [列出 JSON 中 missingCapabilities 內的特徵，若無則填「無」]
 
-  #### 2. Component API & Path
-  * **Props/Emits**: [整理 JSON 內的 props, configurableProps 與 emits。若無則填 unknown]
-  * **Path**: `[填寫 JSON 內的 filePath]`
+#### 2. Component API & Path
+* **Props/Emits**: [整理 JSON 內的 props, configurableProps 與 emits。若無則填 unknown]
+* **Path**: `[填寫 JSON 內的 filePath]`
 
-  #### 3. Architect's Advice (實作建議)
-  * [若覆蓋率為 100%，建議直接引用；若部分符合，依據缺失特徵建議如何擴充，或是否另行封裝]
+#### 3. Architect's Advice (實作建議)
+* [若覆蓋率為 100%，建議直接引用；若部分符合，依據缺失特徵建議如何擴充，或是否另行封裝]
+
 </details>
 
-(若有其他候選元件，請重複上述 <details> 結構，預設保持摺疊即不要加上 open 屬性。標題編號請依序替換為 2., 3., 4., 5.)
+(若有其他候選元件，請重複上述 <details> 結構，預設保持摺疊即不要加上 open 屬性。標題編號請依序替換為 2., 3., 4., 5。注意：<details> 標籤內部的 Markdown 絕對不可有開頭空格縮排，且 <summary> 下方與 </details> 上方必須保留空行)
